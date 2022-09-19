@@ -23,31 +23,74 @@
                         <div class="form-group row">
                             <div class="col-12 col-sm-6 col-md-8">
                                 <label for="exampleFormControlSelect1">estado</label>
-                                <select class="form-control" id="estado" aria-placeholder="estados">
-            <option>RJ</option>
-            <option>SP</option>
-            <option>AM</option>
-            <option>MG</option>
-            <option>MS</option>
+                                <select class="form-control" name="slct1" id="slct1" aria-placeholder="estados">
+                                    <option>Estado</option>
+    
           </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-12 col-sm-6 col-md-8">
                                 <label for="exampleFormControlSelect1">cidade</label>
-                                <select class="form-control" id="cidade" aria-placeholder="cidades'">
-              <option>SAO PAULO</option>
-              <option>RIO DE JANEIRO</option>
-              <option>MANAUS</option>
-              <option>BELO HORIZONTE</option>
-              <option>CAMPO GRANDE</option>
-            </select>
+                                <select class="form-control" name="slct2" id="slct2" aria-placeholder="estados">
+                                    <option>Cidade</option>
+    
+          </select>
                             </div>
                         </div>
                     </form>
             </div>
         </div>
         </center>
+
+        <script>
+            let estados = ["Rio de Janeiro", "Sao Paulo", "Minas Gerais", "Bahia", "Santa Catarina"];
+            let sp = ["Lins", "Campinas", "Jaú", "Rio Preto", "São Paulo"];
+            let rj = ["Rio de Janeiro", "Petropolis", "Niterói", "Nova Iguaçu", "São Gonçalo"];
+            let mg = ["Uberlandia", "Belo Horizonte", "Mariana", "Congonhas", "Uberaba"];
+            let ba = ["Salvador", "Ilhéus", "Porto Seguro", "Barreiras", "Abaré"];
+            let sc = ["Florianópolis", "São José", "Chapecó", "Itajaí", "Criciúma"];
+
+            let slct1 = document.getElementById("slct1");
+            let slct2 = document.getElementById("slct2");
+
+            estados.forEach(function addEstados(item) {
+                let option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                slct1.appendChild(option);
+
+            });
+
+            slct1.onchange = function() {
+                slct2.innerHTML = "<option></option>";
+                if (this.value == "Sao Paulo") {
+                    addToSlct2(sp);
+                }
+                if (this.value == "Rio de Janeiro") {
+                    addToSlct2(rj);
+                }
+                if (this.value == "Minas Gerais") {
+                    addToSlct2(mg);
+                }
+                if (this.value == "Bahia") {
+                    addToSlct2(ba);
+                }
+                if (this.value == "Santa Catarina") {
+                    addToSlct2(sc);
+                }
+            }
+
+            function addToSlct2(arr) {
+                arr.forEach(function(item) {
+                    let option = document.createElement("option");
+                    option.text = item;
+                    option.value = item;
+                    slct2.appendChild(option);
+                });
+            }
+        </script>
+
         <script src="js/jquery-3.6.1.min.js "></script>
         <script src="js/bootstrap.js "></script>
         <script src="js/script.js "></script>

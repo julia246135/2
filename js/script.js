@@ -1,33 +1,11 @@
 $(document).ready(function() {
 
-            $('#estado').click(function(e) {
+    var opt_1 = new array(" - ", " Doom ", " Forza ", " DOTA2 ")
 
+    var opt_2 = new array(" - ", " Disco Duro ", " SSD ", " CPU ", " ... ");
 
-                    e.preventDefault()
+    var opt_3 = new array(" - ", " Google Chrome ", " Linux ", " operoa ")
 
-                    let dados = $('#cidade').val()
-                    let status = $(this).attr('status')
+    var opt_4 = new array(" - ", " MSI ", " ASUS ", " GIGABYTE ", " ... ");
 
-                    if (option == 'SP' {
-
-                            $('#estado').append('SAO PAULO')
-                            $('#estado').attr('data-status', '2')
-
-                        } else {
-
-                            $('#estado').append('MANAUS')
-                            $('#estado').attr('data-status', '1')
-                        }
-
-                        $.ajax({
-                            type: 'GET',
-                            dataType: 'JSON',
-                            assync: true,
-
-                            success: function(dados) {
-                                $('#estado').val(dados.estados)
-                                $('#cidade').val(dados.cidades)
-                            }
-                        })
-                    })
-            })
+})
